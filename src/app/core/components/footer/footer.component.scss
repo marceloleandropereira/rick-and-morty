@@ -1,0 +1,13 @@
+.footer {
+    width: 100%;
+    height: 50px;
+    padding: 16px 0;
+
+    background-color: var(--color-blue-light-10);
+    border: solid 1px var(--color-base-gray);
+
+    &__signature {
+        font-size: 14px;
+        color: var(--color-blue-dark-20);
+    }
+}
