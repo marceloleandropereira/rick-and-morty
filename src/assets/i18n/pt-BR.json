@@ -1,0 +1,12 @@
+{
+    "footer": {
+        "signature": "Desenvolvido por Marcelo Pereira - 2023"
+    },
+    "header": {
+        "search": "Procurar",
+        "search-input": "Procure por personagens, locais e episódios...",
+        "characters": "Personagens",
+        "locations": "Localizações",
+        "episodes": "Episódios"
+    }
+}

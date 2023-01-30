@@ -1,16 +1,34 @@
 <div class="header">
     <div class="container">
-        <div class="row align-items-center header__search">
-            <div class="col-md-auto d-none d-md-block">
+        <div class="d-flex align-items-center justify-content-around header__search">
+            <div class="d-none d-md-block">
                 <img id="img-login"
                      src="/assets/images/rick_and_morty_logo.png"
                      height="60px" />
             </div>
-            <div class="col">
+            <div class="flex-fill header__search__input">
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search for characters, locations and episodes..." aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                    <input class="form-control me-2" type="search" [placeholder]="'header.search-input' | translate" aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit">
+                        {{ 'header.search' | translate }}
+                    </button>
                 </form>
+            </div>
+            <div class="header__search__language">
+                <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img id="img-login"
+                    [src]="userLanguage.src"
+                    height="20px" />
+                </button>
+                <ul class="dropdown-menu __dropdown">
+                    <li *ngFor="let translate of translates;"
+                        (click)="setTranslate(translate)">
+                        <ng-container
+                            [ngTemplateOutlet]="languageOption"
+                            [ngTemplateOutletContext]="{ translate }">
+                        </ng-container>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
@@ -30,13 +48,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item header__navbar__item">
-                            <a class="nav-link" href="#">Characters</a>
+                            <a class="nav-link" href="#">{{ 'header.characters' | translate }}</a>
                         </li>
                         <li class="nav-item header__navbar__item">
-                            <a class="nav-link" href="#">Locations</a>
+                            <a class="nav-link" href="#">{{ 'header.locations' | translate }}</a>
                         </li>
                         <li class="nav-item header__navbar__item">
-                            <a class="nav-link" href="#">Episodes</a>
+                            <a class="nav-link" href="#">{{ 'header.episodes' | translate }}</a>
                         </li>
                     </ul>
                 </div>
@@ -44,3 +62,10 @@
         </div>
     </div>
 </div>
+
+<ng-template #languageOption let-translate="translate">
+    <span class="dropdown-item d-flex align-items-center">
+        <img [src]="translate.src"
+             height="20px"/>
+    </span>
+</ng-template>

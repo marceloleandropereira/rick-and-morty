@@ -4,6 +4,25 @@
 
     &__search {
         margin: 16px;
+
+        &__input {
+            margin: 0 16px;
+        }
+
+        &__language {
+            button {
+                padding-right: 8px;
+            }
+
+            ul {
+                min-width: 60px;
+            }
+
+            li {
+                padding: 8px;
+                cursor: pointer;
+            }
+        }
     }
 
     &__navbar {
@@ -26,5 +45,4 @@
             opacity: 1;
         }
     }
-
 }
