@@ -35,14 +35,21 @@
         }
 
         a {
+            padding: 8px 0;
+            font-size: 16px;
             color: var(--color-blue-dark-10);
-            opacity: 0.8;
+            opacity: 1;
             font-weight: 400;
         }
 
         a:hover {
             cursor: pointer;
-            opacity: 1;
+            opacity: 0.8;
+        }
+
+        .nav-item.active {
+            color: var(--color-blue-dark-20);
+            border-bottom: 1px solid var(--color-blue-dark-20);
         }
     }
 }

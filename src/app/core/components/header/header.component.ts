@@ -19,11 +19,7 @@ export class HeaderComponent {
     private translateService: TranslateService
   ) {
       this.userLanguage = this.getUserLanguage();
-  }
-
-  ngOnInit() {
-    this.userLanguage = this.getUserLanguage();
-    this.translateService.use(this.userLanguage.id);
+      this.translateService.use(this.userLanguage.id);
   }
 
   public getUserLanguage(): Translate {
